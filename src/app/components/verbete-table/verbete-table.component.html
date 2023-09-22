@@ -4,7 +4,8 @@
     styleClass="shadow-3 m-5 text-indigo-800"
     header="Produtos em estoque">
     <p-table
-      #productsTable
+      #verbetesTable
+      [value]="verbetes"
       [rows]="10"
       [paginator]="true"
       [responsive]="true"
@@ -79,6 +80,11 @@
         </tr>
       </ng-template>
 
+      <ng-template pTemplate="body" let-verbete>
+        <td>{{verbete?.palavra}}</td>
+        <td>{{verbete?.definicao}}</td>
+        <td>{{verbete?.obs}}</td>
+      </ng-template>
     </p-table>
   </p-card>
   </div>

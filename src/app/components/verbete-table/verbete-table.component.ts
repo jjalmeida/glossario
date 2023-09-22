@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { VerbeteResponseDTO } from 'src/app/models/interfaces/response/VerbeteResponseDTO';
 
 @Component({
   selector: 'app-verbete-table',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: []
 })
 export class VerbeteTableComponent {
-
+  @Input() verbetes: Array<VerbeteResponseDTO> = [];
 }
