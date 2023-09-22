@@ -1,0 +1,85 @@
+<div class="grid">
+  <div class="col-12">
+    <p-card
+    styleClass="shadow-3 m-5 text-indigo-800"
+    header="Produtos em estoque">
+    <p-table
+      #productsTable
+      [rows]="10"
+      [paginator]="true"
+      [responsive]="true"
+      [globalFilterFields]="['name','amount']"
+      [tableStyle]="{'min-width': '75rem'}"
+      [rowHover]="true"
+      [showCurrentPageReport]="true"
+      dataKey="id"
+      currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} produtos">
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="palavra">
+            <div class="flex justify-content-between align-items-center">
+              <div class="flex justify-content-between align-items-center">
+                Palavra
+              </div>
+              <div class="flex justify-content-between align-items-center">
+                <p-sortIcon field="palavra"></p-sortIcon>
+                <p-columnFilter
+                type="text"
+                field="palavra"
+                display="menu"
+                matchMode="contains"
+                [showMatchModes]="false"
+                [showOperator]="false"
+                [showAddButton]="false"
+                ></p-columnFilter>
+              </div>
+            </div>
+          </th>
+
+          <th pSortableColumn="definicao">
+            <div class="flex justify-content-between align-items-center">
+              <div class="flex justify-content-between align-items-center">
+                Definição
+              </div>
+              <div class="flex justify-content-between align-items-center">
+                <p-sortIcon field="definicao"></p-sortIcon>
+                <p-columnFilter
+                type="text"
+                field="definicao"
+                display="menu"
+                matchMode="contains"
+                [showMatchModes]="false"
+                [showOperator]="false"
+                [showAddButton]="false"
+                ></p-columnFilter>
+              </div>
+            </div>
+          </th>
+
+          <th pSortableColumn="obs">
+            <div class="flex justify-content-between align-items-center">
+              <div class="flex justify-content-between align-items-center">
+                Observação
+              </div>
+              <div class="flex justify-content-between align-items-center">
+                <p-sortIcon field="obs"></p-sortIcon>
+                <p-columnFilter
+                type="text"
+                field="obs"
+                display="menu"
+                matchMode="contains"
+                [showMatchModes]="false"
+                [showOperator]="false"
+                [showAddButton]="false"
+                ></p-columnFilter>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </p-card>
+  </div>
+</div>
